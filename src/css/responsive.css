@@ -1,0 +1,87 @@
+/**
+ * Responsividade — camadas por cima do layout de celular.
+ * Breakpoints: 380px (celulares grandes), 768px (tablet), 1024px (PC).
+ */
+
+/* Celulares muito pequenos */
+@media (max-width: 359px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celulares grandes */
+@media (min-width: 380px) {
+  :root {
+    --text-title: 1.75rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  :root {
+    --container: 640px;
+    --text-title: 2.1rem;
+    --text-xs: 0.875rem;
+    --text-sm: 1rem;
+  }
+
+  .site-header__logo {
+    width: 280px;
+  }
+
+  .btn {
+    width: auto;
+    min-width: 340px;
+  }
+
+  .features {
+    gap: var(--space-5);
+  }
+
+  .feature {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+/* PC — mantém tudo centralizado em uma coluna, só com mais respiro */
+@media (min-width: 1024px) {
+  :root {
+    --container: 720px;
+    --text-title: 2.4rem;
+  }
+
+  .site-header {
+    padding-top: var(--space-8);
+  }
+
+  .site-header__logo {
+    width: 300px;
+  }
+
+  .hero {
+    padding-block: var(--space-6) var(--space-10);
+  }
+
+  .hero__media {
+    width: 280px;
+  }
+
+  .hero__seal {
+    width: 92px;
+    right: -30px;
+  }
+
+  .hero__subtitle {
+    font-size: 1.125rem;
+    max-width: 580px;
+  }
+
+  .feature {
+    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  }
+
+  .feature:hover {
+    transform: translateY(-2px);
+  }
+}

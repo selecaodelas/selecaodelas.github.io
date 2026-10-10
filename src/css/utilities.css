@@ -1,0 +1,12 @@
+/* Animação de entrada — só esconde os elementos se o JS estiver ativo
+   (classe `js-reveal` no <html>), assim nada some sem JavaScript. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 1s ease-out, transform 1s var(--ease);
+}
+
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
