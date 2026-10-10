@@ -129,8 +129,10 @@
 
 .features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr; /* celular: um card por linha, centralizados */
   gap: var(--space-3);
+  max-width: 360px;
+  margin-inline: auto;
 }
 
 .feature {
@@ -139,16 +141,12 @@
   justify-items: center;
   align-content: start;
   gap: var(--space-2);
-  padding: var(--space-5) var(--space-3) var(--space-5) var(--space-4);
+  padding: var(--space-5) var(--space-5);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
   text-align: center;
   overflow: hidden;
-}
-
-.feature--destaque {
-  grid-column: 1 / -1; /* no celular ocupa a linha inteira */
 }
 
 .feature::before {
