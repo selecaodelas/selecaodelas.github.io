@@ -36,7 +36,12 @@
   }
 
   .features {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-5);
+  }
+
+  .feature--destaque {
+    grid-column: auto;
   }
 
   .feature {

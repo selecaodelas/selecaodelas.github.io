@@ -46,7 +46,7 @@
   height: auto;
   aspect-ratio: 1; /* quadrado → com border-radius 50% vira círculo */
   object-fit: cover;
-  object-position: 38% 30%; /* centraliza o rosto no círculo */
+  object-position: center;
   border-radius: 50%;
 }
 
@@ -145,6 +145,10 @@
   box-shadow: var(--shadow-card);
   text-align: center;
   overflow: hidden;
+}
+
+.feature--destaque {
+  grid-column: 1 / -1; /* no celular ocupa a linha inteira */
 }
 
 .feature::before {
