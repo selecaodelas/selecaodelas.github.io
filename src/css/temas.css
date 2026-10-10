@@ -1,0 +1,22 @@
+/**
+ * Temas de aparência da versão normal.
+ * O tema ativo fica em <html data-tema="claro|escuro"> (definido pelo JS).
+ * "claro" é o padrão (tokens.css), então aqui só existe o escuro.
+ */
+[data-tema='escuro'] body {
+  --pink-50: #140a0f;
+  --pink-100: #2b1220;
+  --pink-200: #4a1f33;
+  --pink-300: #ff7aa6;
+  --pink-500: #ff3d7f;
+  --pink-600: #ff6b9b;
+
+  --color-bg: #140a0f;
+  --color-surface: #1f1118;
+  --color-text: #fbe9f0;
+  --color-text-muted: #c8a2b3;
+  --color-border: #3a1e2b;
+  --shadow-card: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+
+  color-scheme: dark;
+}

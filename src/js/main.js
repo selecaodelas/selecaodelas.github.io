@@ -39,6 +39,36 @@
     });
   }
 
+  /**
+   * Botões de aparência (claro / escuro / Natal).
+   * O tema fica em <html data-tema="..."> e é lembrado no navegador.
+   */
+  function iniciarTemas() {
+    var raiz = document.documentElement;
+    var botoes = document.querySelectorAll('[data-tema-opcao]');
+    var corBarra = document.querySelector('meta[name="theme-color"]');
+    var CORES_BARRA = { claro: null, escuro: '#140a0f', natal: '#a30e1c' };
+    var corOriginal = corBarra ? corBarra.content : null;
+
+    function aplicar(tema, salvar) {
+      raiz.dataset.tema = tema;
+      botoes.forEach(function (botao) {
+        botao.setAttribute('aria-pressed', String(botao.dataset.temaOpcao === tema));
+      });
+      if (corBarra) corBarra.content = CORES_BARRA[tema] || corOriginal;
+      if (salvar) {
+        try { localStorage.setItem('sd-tema-' + raiz.dataset.pagina, tema); } catch (e) { /* modo privado */ }
+      }
+    }
+
+    botoes.forEach(function (botao) {
+      botao.addEventListener('click', function () { aplicar(botao.dataset.temaOpcao, true); });
+    });
+
+    aplicar(raiz.dataset.tema || raiz.dataset.temaPadrao || 'claro', false);
+  }
+
+  iniciarTemas();
   iniciarRevelacao();
   iniciarRastreamento();
 })();

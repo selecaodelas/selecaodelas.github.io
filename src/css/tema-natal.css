@@ -1,9 +1,15 @@
 /**
  * Tema de Natal — carregado só em natal/index.html (<body class="tema-natal">).
- * Reaproveita todo o CSS do site e troca apenas cores e detalhes.
+ * Reaproveita todo o CSS do site e troca cores e detalhes.
+ *
+ * Três aparências, escolhidas pelos botões do topo (<html data-tema="...">):
+ *   claro  → creme com vermelho, verde e dourado
+ *   escuro → verde-pinheiro escuro
+ *   natal  → fundo vermelho (padrão desta página)
  */
+
+/* ===================== Base (claro) ===================== */
 .tema-natal {
-  /* A paleta "pink" vira vermelho natalino; o resto do CSS não muda */
   --pink-50: #fff8f3;
   --pink-100: #fde8e4;
   --pink-200: #f7c6c0;
@@ -11,38 +17,62 @@
   --pink-500: #c8102e;
   --pink-600: #a00d24;
   --pink-700: #7a0a1c;
-
   --green-700: #0f5b34;
-  --gold-400: #e5b84a;
+  --green-500: #1f9d5c;
+  --gold-300: #f4d27a;
+  --gold-500: #c9962e;
 
+  --color-bg: #fff8f3;
+  --color-surface: #ffffff;
   --color-text: #2a1416;
   --color-text-muted: #6e5355;
   --color-border: #efd9cf;
   --shadow-card: 0 10px 30px -12px rgb(122 10 28 / 0.25);
   --shadow-btn: 0 14px 30px -10px rgb(200 16 46 / 0.55);
+  --neve: rgb(201 150 46 / 0.22); /* cor dos pontinhos decorativos */
 
+  position: relative;
   background:
     radial-gradient(110% 55% at 50% 0%, #fbe3dc, transparent 70%),
     radial-gradient(60% 40% at 100% 100%, rgb(15 91 52 / 0.08), transparent 70%),
-    var(--pink-50);
+    var(--color-bg);
 }
 
-/* Logo redonda de Natal */
-.tema-natal .site-header__logo--natal {
-  width: min(48vw, 190px);
+/* Pontinhos estáticos de "neve" ao fundo (sem animação) */
+.tema-natal::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, var(--neve) 1.5px, transparent 2px),
+    radial-gradient(circle, var(--neve) 1px, transparent 1.5px);
+  background-size: 64px 64px, 38px 38px;
+  background-position: 0 0, 19px 27px;
 }
 
-/* Moldura da foto: vermelho com anel dourado */
+.tema-natal > * {
+  position: relative; /* conteúdo acima da neve */
+}
+
+/* Moldura da foto: dourado → vermelho → verde */
 .tema-natal .photo-frame {
-  background: linear-gradient(145deg, var(--gold-400), var(--pink-500) 45%, var(--green-700));
+  background: linear-gradient(145deg, var(--gold-300), var(--pink-500) 45%, var(--green-700));
 }
 
-/* Botão vermelho com brilho dourado sutil */
+/* Selo redondo de Natal ao lado da foto (mesma posição do selo da versão normal) */
+.tema-natal .hero__seal--natal {
+  width: 82px;
+  right: -16px;
+  bottom: -8px;
+  filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.28));
+}
+
 .tema-natal .btn {
   background: linear-gradient(135deg, #e0473f, var(--pink-500) 55%, var(--pink-700));
 }
 
-/* Barrinha lateral dos cards: vermelho → verde */
+/* Cards: barrinha vermelho → verde e ícone verde */
 .tema-natal .feature::before {
   background: linear-gradient(var(--pink-500), var(--green-700));
 }
@@ -56,8 +86,90 @@
   color: var(--green-700);
 }
 
+.tema-natal .theme-switch__btn[aria-pressed='true'] {
+  background: var(--green-700);
+}
+
+/* ===================== Escuro ===================== */
+[data-tema='escuro'] body.tema-natal {
+  --pink-300: #ff6b6b;
+  --pink-500: #e5383b;
+  --pink-700: #9b111e;
+  --green-700: #3fbf7a;
+
+  --color-bg: #0c1611;
+  --color-surface: #132219;
+  --color-text: #f6efe6;
+  --color-text-muted: #b7c4b9;
+  --color-border: #22382b;
+  --shadow-card: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+  --neve: rgb(255 255 255 / 0.1);
+
+  color-scheme: dark;
+  background:
+    radial-gradient(110% 55% at 50% 0%, #1d3326, transparent 70%),
+    radial-gradient(60% 40% at 100% 100%, rgb(229 56 59 / 0.12), transparent 70%),
+    var(--color-bg);
+}
+
+[data-tema='escuro'] .tema-natal .feature__icon {
+  background: rgb(63 191 122 / 0.14);
+}
+
+[data-tema='escuro'] .tema-natal .theme-switch__btn[aria-pressed='true'] {
+  color: #0c1611;
+}
+
+/* ===================== Natal (fundo vermelho) ===================== */
+[data-tema='natal'] body.tema-natal {
+  --color-bg: #a30e1c;
+  --color-surface: #fffaf5;
+  --color-text: #ffffff;
+  --color-text-muted: rgb(255 255 255 / 0.86);
+  --color-border: rgb(255 255 255 / 0.22);
+  --shadow-card: 0 14px 34px -14px rgb(60 0 8 / 0.55);
+  --shadow-btn: 0 14px 30px -10px rgb(0 0 0 / 0.35);
+  --neve: rgb(255 255 255 / 0.16);
+
+  background:
+    radial-gradient(110% 55% at 50% 0%, #d42a36, transparent 70%),
+    radial-gradient(70% 45% at 50% 100%, rgb(15 91 52 / 0.35), transparent 75%),
+    var(--color-bg);
+}
+
+[data-tema='natal'] .tema-natal .hero__title {
+  text-shadow: 0 2px 12px rgb(80 0 10 / 0.35);
+}
+
+/* Moldura dourada sobre o vermelho */
+[data-tema='natal'] .tema-natal .photo-frame {
+  background: linear-gradient(145deg, #fff3c4, var(--gold-300) 40%, var(--gold-500));
+}
+
+/* Botão verde para contrastar com o fundo vermelho */
+[data-tema='natal'] .tema-natal .btn {
+  background: linear-gradient(135deg, var(--green-500), var(--green-700));
+}
+
+/* Cards claros com texto escuro */
+[data-tema='natal'] .tema-natal .feature {
+  --color-text-muted: #6e5355;
+  color: #2a1416;
+}
+
+[data-tema='natal'] .tema-natal .site-footer__credit {
+  color: #fff;
+}
+
+/* Botões de aparência sobre fundo vermelho */
+[data-tema='natal'] .tema-natal .theme-switch {
+  --color-text-muted: #7a5558;
+  border-color: transparent;
+}
+
 @media (min-width: 1024px) {
-  .tema-natal .site-header__logo--natal {
-    width: 210px;
+  .tema-natal .hero__seal--natal {
+    width: 96px;
+    right: -22px;
   }
 }

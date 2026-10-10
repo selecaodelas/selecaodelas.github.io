@@ -14,7 +14,7 @@ Todo o conteúdo está no **`index.html`**, separado por comentários
 
 - Cores e fontes: `src/css/tokens.css`
 - Imagens: `assets/img/`
-- Depois de alterar CSS/JS, aumente o número em `?v=8` no `index.html` para o navegador não usar a versão antiga em cache.
+- Depois de alterar CSS/JS, aumente o número em `?v=9` no `index.html` para o navegador não usar a versão antiga em cache.
 
 ## Versões do site
 
@@ -26,6 +26,18 @@ Todo o conteúdo está no **`index.html`**, separado por comentários
 As duas usam o mesmo CSS (`src/css`). A de Natal carrega também `src/css/tema-natal.css`
 (cores vermelho/verde/dourado) e usa as imagens de `assets/img/natal/`.
 Para criar outra versão (ex.: Black Friday), copie a pasta `natal`, renomeie e troque textos, imagens e tema.
+
+## Botões de aparência
+
+No topo de cada página há botões para trocar a aparência (a escolha fica salva no navegador):
+
+| Página | Opções | Padrão |
+|---|---|---|
+| Normal | ☀️ claro · 🌙 escuro | claro |
+| Natal | ☀️ claro · 🌙 escuro · 🎄 Natal (fundo vermelho) | Natal |
+
+O padrão de cada página é o atributo `data-tema-padrao` na tag `<html>`.
+Cores: versão normal em `src/css/temas.css`; versão de Natal em `src/css/tema-natal.css`.
 
 ## Estrutura
 
@@ -42,7 +54,7 @@ Para criar outra versão (ex.: Black Friday), copie a pasta `natal`, renomeie e 
     │   ├── responsive.css   # Ajustes para tablet (768px) e PC (1024px)
     │   └── utilities.css    # Animações
     └── js/
-        └── main.js          # Animação de entrada + rastreamento de cliques (opcional)
+        └── main.js          # Botões de tema + animação de entrada + rastreamento de cliques
 ```
 
 O site é HTML estático: carrega mais rápido, aparece melhor no Google e funciona mesmo sem JavaScript.
