@@ -28,7 +28,9 @@
   --color-text-muted: #6e5355;
   --color-border: #efd9cf;
   --shadow-card: 0 10px 30px -12px rgb(122 10 28 / 0.25);
-  --shadow-btn: 0 14px 30px -10px rgb(200 16 46 / 0.55);
+  --shadow-btn: 0 14px 28px -8px rgb(122 10 28 / 0.6), 0 4px 10px rgb(122 10 28 / 0.25);
+  --btn-glow: rgb(200 16 46 / 0.3);
+  --btn-glow-fim: rgb(200 16 46 / 0.12);
   --neve: rgb(201 150 46 / 0.22); /* cor dos pontinhos decorativos */
 
   position: relative;
@@ -104,6 +106,9 @@
   --color-border: #22382b;
   --shadow-card: 0 10px 30px -12px rgb(0 0 0 / 0.6);
   --neve: rgb(255 255 255 / 0.1);
+  --shadow-btn: 0 14px 28px -8px rgb(0 0 0 / 0.7), 0 4px 10px rgb(0 0 0 / 0.4);
+  --btn-glow: rgb(229 56 59 / 0.35);
+  --btn-glow-fim: rgb(229 56 59 / 0.12);
 
   color-scheme: dark;
   background:
@@ -128,7 +133,10 @@
   --color-text-muted: rgb(255 255 255 / 0.86);
   --color-border: rgb(255 255 255 / 0.22);
   --shadow-card: 0 14px 34px -14px rgb(60 0 8 / 0.55);
-  --shadow-btn: 0 14px 30px -10px rgb(0 0 0 / 0.35);
+  /* Sombra escura e bem marcada para o botão verde aparecer sobre o vermelho */
+  --shadow-btn: 0 16px 30px -8px rgb(40 0 6 / 0.75), 0 6px 12px rgb(40 0 6 / 0.45);
+  --btn-glow: rgb(15 91 52 / 0.55);
+  --btn-glow-fim: rgb(15 91 52 / 0.25);
   --neve: rgb(255 255 255 / 0.16);
 
   background:

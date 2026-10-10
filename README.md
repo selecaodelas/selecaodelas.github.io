@@ -14,7 +14,7 @@ Todo o conteúdo está no **`index.html`**, separado por comentários
 
 - Cores e fontes: `src/css/tokens.css`
 - Imagens: `assets/img/`
-- Depois de alterar CSS/JS, aumente o número em `?v=9` no `index.html` para o navegador não usar a versão antiga em cache.
+- Depois de alterar CSS/JS, aumente o número em `?v=10` no `index.html` para o navegador não usar a versão antiga em cache.
 
 ## Versões do site
 
