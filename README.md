@@ -14,7 +14,7 @@ Todo o conteúdo está no **`index.html`**, separado por comentários
 
 - Cores e fontes: `src/css/tokens.css`
 - Imagens: `assets/img/`
-- Depois de alterar CSS/JS, aumente o número em `?v=10` no `index.html` para o navegador não usar a versão antiga em cache.
+- Depois de alterar CSS/JS, aumente o número em `?v=12` no `index.html` para o navegador não usar a versão antiga em cache.
 
 ## Versões do site
 
@@ -67,7 +67,7 @@ O CSS base é o layout de celular. `responsive.css` só **acrescenta** regras co
 |---|---|
 | até 767px | celular: tudo centralizado, botão largura total, um card por linha |
 | 768px+ | tablet: textos maiores, cards lado a lado |
-| 1024px+ | PC: mesma coluna centralizada (foto em cima, texto embaixo), com mais espaço |
+| 1024px+ | PC: mesma coluna centralizada (logo à esquerda, foto de perfil centralizada no topo), com mais espaço |
 
 ## Publicar
 

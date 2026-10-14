@@ -23,8 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- O "?v=" força o navegador a baixar a versão nova após alterações -->
-    <link rel="stylesheet" href="../src/css/main.css?v=11" />
-    <link rel="stylesheet" href="../src/css/tema-natal.css?v=11" />
+    <link rel="stylesheet" href="../src/css/main.css?v=12" />
+    <link rel="stylesheet" href="../src/css/tema-natal.css?v=12" />
     <script>
       /* Aplica o tema salvo antes de desenhar a página (evita "piscar") */
       (function (raiz) {
@@ -34,13 +34,18 @@
         raiz.dataset.tema = tema;
       })(document.documentElement);
     </script>
-    <script src="../src/js/main.js?v=11" defer></script>
+    <script src="../src/js/main.js?v=12" defer></script>
   </head>
 
   <body class="tema-natal">
     <!-- ============ VERSÃO DE NATAL · CABEÇALHO ============ -->
     <header class="site-header">
-      <div class="container">
+      <div class="container site-header__bar">
+        <!-- Logo à esquerda -->
+        <picture>
+          <source srcset="../assets/img/natal/logo-selecao-delas-natal.webp" type="image/webp" />
+          <img class="site-header__logo" src="../assets/img/natal/logo-selecao-delas-natal.png" alt="Seleção Delas — edição de Natal" width="882" height="521" />
+        </picture>
         <!-- Botões de aparência (claro / escuro / Natal) -->
         <div class="theme-switch" role="group" aria-label="Aparência do site">
           <button type="button" class="theme-switch__btn" data-tema-opcao="claro" aria-label="Modo claro" aria-pressed="false">
@@ -53,10 +58,19 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 5 7h-3l4 6h-3l3 4H6l3-4H6l4-6H7Z" /><path d="M12 19v3" /></svg>
           </button>
         </div>
-        <picture>
-          <source srcset="../assets/img/natal/logo-selecao-delas-natal.webp" type="image/webp" />
-          <img class="site-header__logo" src="../assets/img/natal/logo-selecao-delas-natal.png" alt="Seleção Delas — edição de Natal" width="882" height="521" />
-        </picture>
+      </div>
+
+      <!-- Foto de perfil centralizada -->
+      <div class="container site-header__profile">
+        <div class="avatar">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="../assets/img/natal/foto-natal.webp" type="image/webp" />
+              <img class="photo-frame__img" src="../assets/img/natal/foto-natal.jpg" alt="Foto da curadora do grupo Seleção Delas" width="640" height="640" fetchpriority="high" />
+            </picture>
+          </div>
+          <img class="avatar__seal avatar__seal--natal" src="../assets/img/natal/selo-natal.png" alt="" width="320" height="313" />
+        </div>
       </div>
     </header>
 
@@ -64,16 +78,6 @@
       <!-- ============ APRESENTAÇÃO ============ -->
       <section class="hero" aria-label="Grupo VIP Seleção Delas">
         <div class="container hero__stack">
-          <div class="hero__media reveal">
-            <div class="photo-frame">
-              <picture>
-                <source srcset="../assets/img/natal/foto-natal.webp" type="image/webp" />
-                <img class="photo-frame__img" src="../assets/img/natal/foto-natal.jpg" alt="Foto da curadora do grupo Seleção Delas" width="640" height="640" fetchpriority="high" />
-              </picture>
-            </div>
-            <img class="hero__seal hero__seal--natal" src="../assets/img/natal/selo-natal.png" alt="" width="320" height="313" />
-          </div>
-
           <div class="hero__content reveal">
             <h1 class="hero__title">Eu garimpo as melhores ofertas para deixar seu Natal e sua casa ainda mais lindos, pagando menos 🎄</h1>
             <p class="hero__subtitle">

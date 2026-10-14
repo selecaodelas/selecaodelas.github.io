@@ -20,7 +20,15 @@
   }
 
   .site-header__logo {
-    width: 280px;
+    width: 180px;
+  }
+
+  .avatar {
+    width: 124px;
+  }
+
+  .avatar__seal {
+    width: 42px;
   }
 
   .btn {
@@ -40,7 +48,7 @@
   }
 }
 
-/* PC — mantém tudo centralizado em uma coluna, só com mais respiro */
+/* PC — mantém o conteúdo centralizado em uma coluna, só com mais respiro */
 @media (min-width: 1024px) {
   :root {
     --container: 720px;
@@ -52,20 +60,15 @@
   }
 
   .site-header__logo {
-    width: 300px;
+    width: 190px;
+  }
+
+  .avatar {
+    width: 132px;
   }
 
   .hero {
     padding-block: var(--space-6) var(--space-10);
-  }
-
-  .hero__media {
-    width: 230px;
-  }
-
-  .hero__seal {
-    width: 74px;
-    right: -6px;
   }
 
   .hero__subtitle {

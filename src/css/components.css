@@ -5,21 +5,27 @@
   margin-inline: auto;
 }
 
-/* ---------- Header / logo ---------- */
+/* ---------- Header: logo à esquerda + botões à direita; foto centralizada abaixo ---------- */
 .site-header {
   padding-top: var(--space-3);
 }
 
-.site-header .container {
+.site-header__bar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.site-header__profile {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2);
 }
 
 /* ---------- Botões de aparência (claro / escuro / Natal) ---------- */
 .theme-switch {
-  align-self: flex-end;
+  flex-shrink: 0;
   display: inline-flex;
   gap: 2px;
   padding: 3px;
@@ -52,10 +58,15 @@
 }
 
 .site-header__logo {
-  width: min(62vw, 240px);
+  width: min(44vw, 160px);
   height: auto;
-  margin-inline: auto;
-  filter: drop-shadow(0 8px 16px rgb(200 15 75 / 0.18));
+  filter: drop-shadow(0 4px 8px rgb(200 15 75 / 0.18));
+}
+
+/* Foto de perfil redonda, tamanho médio, centralizada no topo */
+.avatar {
+  position: relative;
+  width: 112px;
 }
 
 /* ---------- Hero ---------- */
@@ -66,17 +77,12 @@
 .hero__stack {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza foto e texto horizontalmente */
+  align-items: center; /* centraliza o texto horizontalmente */
   gap: var(--space-8);
 }
 
-.hero__media {
-  position: relative;
-  width: min(58%, 210px);
-}
-
 .photo-frame {
-  padding: 6px;
+  padding: 4px;
   border-radius: 50%;
   background: linear-gradient(145deg, var(--pink-300), var(--pink-500));
   box-shadow: var(--shadow-card);
@@ -91,13 +97,13 @@
   border-radius: 50%;
 }
 
-.hero__seal {
+.avatar__seal {
   position: absolute;
-  right: -4px;
-  bottom: 2px;
-  width: 64px;
+  right: -8px;
+  bottom: -4px;
+  width: 38px;
   height: auto;
-  filter: drop-shadow(0 6px 10px rgb(158 12 59 / 0.25));
+  filter: drop-shadow(0 2px 4px rgb(158 12 59 / 0.3));
   /* Selo fixo, sem animação: movimentos pequenos em imagem com sombra
      causam "tremido" (arredondamento de pixel) em vários navegadores. */
 }
